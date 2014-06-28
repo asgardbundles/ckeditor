@@ -8,6 +8,38 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
 	// %REMOVE_START%
+	config.filebrowserBrowseUrl = $('base').attr('href')+'../ckeditor/kcfinder/browse.php?type=files';
+	config.filebrowserImageBrowseUrl = $('base').attr('href')+'../ckeditor/kcfinder/browse.php?type=images';
+	config.filebrowserFlashBrowseUrl = $('base').attr('href')+'../ckeditor/kcfinder/browse.php?type=flash';
+	config.filebrowserUploadUrl = $('base').attr('href')+'../ckeditor/kcfinder/upload.php?type=files';
+	config.filebrowserImageUploadUrl = $('base').attr('href')+'../ckeditor/kcfinder/upload.php?type=images';
+	config.filebrowserFlashUploadUrl = $('base').attr('href')+'../ckeditor/kcfinder/upload.php?type=flash';
+
+	config.extraPlugins = 'youtube';
+
+	config.removePlugins = 'elementspath';
+
+	config.toolbar = [
+			// { name: 'document', items : [ 'Source','-','Save','NewPage','Preview','Print','-','Templates' ] },
+			{ name: 'document', items : [  'Source' ] },
+			// { name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+			{ name: 'clipboard', items : [ 'PasteText','-','Undo','Redo' ] },
+			// { name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
+			// '/',
+			{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','-','RemoveFormat' ] },
+			{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-'] },
+			{ name: 'links', items : [ 'Link','Unlink' ] },
+			{ name: 'insert', items : [ 'Image',
+			// 'Flash',
+			'Table','HorizontalRule','SpecialChar'] },
+			'/',
+			{ name: 'styles', items : [ 'Format','FontSize' ] },
+			{ name: 'colors', items : [ 'TextColor','BGColor' ] },
+			// ,
+			// { name: 'tools', items : [ 'Maximize', 'ShowBlocks'] }
+			{ name: 'tools', items : [ 'Maximize'] }, { name: 'videos', items : [ 'vimeo', 'Youtube'] }
+	];
+
 	config.plugins =
 		'about,' +
 		'a11yhelp,' +
